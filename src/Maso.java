@@ -16,5 +16,7 @@ public class Maso {
         return this.deckName;
     }
 
-    public void addCard()
+    public void addCard(){
+        
+    }
 }
