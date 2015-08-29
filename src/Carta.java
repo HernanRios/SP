@@ -17,6 +17,10 @@ public class Carta {
         return this.name;
     }
 
+    public void setAttributtes(Atributo attributtes) {
+        this.attributes = attributes;
+    }
+
     public void setAttribute(String name, int value) {
         if (this.attributes.size() <=7) {
             Atributo newAttribute = new Atributo(name, value);
@@ -25,7 +29,7 @@ public class Carta {
     }
 
     public int getAttribute(String attribute) {
-        if (!this.attributes.isEmpty()) { //if the array isn't empty
+        if (!this.attributes.isEmpty()) { //if the array isn't empty.
             Iterator<Atributo> iterator = attributes.iterator(); //creo el iterador
             while (iterator.hasNext()) { //itero
                 if (attribute == iterator.next().getName()){ //pregunto si el valor siguiente es igual al valor que busco
