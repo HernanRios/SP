@@ -3,10 +3,10 @@ import java.util.Iterator;
 /**
  * Created by Nico on 8/26/15.
  */
-public class Carta {
+public class Card {
     String name;
-    ArrayList<Atributo> attributes = new ArrayList<Atributo>();
-    public Carta() {
+    ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+    public Card() {
     }
 
     public void setName(String name) {
@@ -17,26 +17,26 @@ public class Carta {
         return this.name;
     }
 
-    public void setAttributtes(Atributo attributtes) {
+    public void setAttributtes(ArrayList<Attribute> attributtes) {
         this.attributes = attributes;
     }
 
     public void setAttribute(String name, int value) {
         if (this.attributes.size() <=7) {
-            Atributo newAttribute = new Atributo(name, value);
+            Attribute newAttribute = new Attribute(name, value);
             this.attributes.add(newAttribute);
         }
     }
 
     public int getAttribute(String attribute) {
         if (!this.attributes.isEmpty()) { //if the array isn't empty.
-            Iterator<Atributo> iterator = attributes.iterator(); //creo el iterador
-            while (iterator.hasNext()) { //itero
-                if (attribute == iterator.next().getName()){ //pregunto si el valor siguiente es igual al valor que busco
-                    return iterator.next().getValor(); //retorno el numero del valor que necesito
+            Iterator<Attribute> iterator = attributes.iterator(); //build the iterator.
+            while (iterator.hasNext()) {
+                if (attribute == iterator.next().getName()){
+                    return iterator.next().getValor();
                 }
             }
         }
-        return 0;//si no retorno 0
+        return 0;
     }
 }

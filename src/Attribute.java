@@ -1,11 +1,11 @@
 /**
  * Created by Nico on 8/26/15.
  */
-public class Atributo {
+public class Attribute {
     String name;
     int valor;
 
-    public Atributo(String name, int valor) {
+    public Attribute(String name, int valor) {
         this.name = name;
         this.valor = valor;
     }
