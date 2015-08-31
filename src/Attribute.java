@@ -4,10 +4,12 @@
 public class Attribute {
     String name;
     int valor;
+    boolean highestWins;
 
-    public Attribute(String name, int valor) {
+    public Attribute(String name, int valor, boolean highestWins) {
         this.name = name;
         this.valor = valor;
+        this.highestWins = false;
     }
 
     public int getValor() {
@@ -18,6 +20,13 @@ public class Attribute {
         return name;
     }
 
+    public boolean getWinType() {
+        return this.highestWins;
+    }
+
+    public void setWinType(Boolean highestWins) {
+        this.highestWins = highestWins;
+    }
     public void setName(String name) {
         this.name = name;
     }

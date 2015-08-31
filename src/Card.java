@@ -23,7 +23,7 @@ public class Card {
 
     public void setAttribute(String name, int value) {
         if (this.attributes.size() <=7) {
-            Attribute newAttribute = new Attribute(name, value);
+            Attribute newAttribute = new Attribute(name, value, false);
             this.attributes.add(newAttribute);
         }
     }
@@ -38,5 +38,9 @@ public class Card {
             }
         }
         return 0;
+    }
+
+    public ArrayList<Attribute> getAttributes(){
+        return this.attributes;
     }
 }

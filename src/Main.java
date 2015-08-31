@@ -24,12 +24,12 @@ public class Main {
             numAttributtes = sc.nextInt();
         } while (numAttributtes < 4 || numAttributtes >7);
         for (int i = 0; i < numAttributtes; i++) {
+            sc.nextLine();
             System.out.println("Enter attribute's name " + i);
             attributeName = sc.nextLine();
-            sc.nextLine();
-            System.out.println("Enter attribute's value of"+ attributeName);
+            System.out.println("Enter attribute's value of " + attributeName);
             attributeValue = sc.nextInt();
-            Attribute newAttribute = new Attribute(attributeName, attributeValue);
+            Attribute newAttribute = new Attribute(attributeName, attributeValue, false);
             attributes.add(newAttribute);
         }
         autos.createCard(name,attributes);
