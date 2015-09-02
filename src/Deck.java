@@ -3,8 +3,8 @@ import java.util.ArrayList;
  * Created by Nico on 8/27/15.
  */
 public class Deck {
-    String deckName;
-    ArrayList<Card> cards = new ArrayList<Card>();
+    private String deckName;
+    private ArrayList<Card> cards = new ArrayList<Card>();
     public Deck() {}
 
     public void setName(String name) {
@@ -16,7 +16,7 @@ public class Deck {
     }
 
     public void addCard(Card newCard) {
-        cards.add(newCard);
+        cards.add(0,newCard);
     }
 
     public void createCard(String name, ArrayList<Attribute> attributtes) {
@@ -30,5 +30,12 @@ public class Deck {
         return this.cards.get(cards.size()-1);
     }
 
+    public int remainingCards() {
+        return this.cards.size();
+    }
+
+    public void removeCard() {
+        this.cards.remove(this.cards.size());
+    }
 }
 

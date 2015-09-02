@@ -4,8 +4,8 @@ import java.util.Iterator;
  * Created by Nico on 8/26/15.
  */
 public class Card {
-    String name;
-    ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+    private String name;
+    private ArrayList<Attribute> attributes = new ArrayList<Attribute>();
     public Card() {
     }
 

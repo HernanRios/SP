@@ -2,9 +2,9 @@
  * Created by Nico on 8/26/15.
  */
 public class Attribute {
-    String name;
-    int valor;
-    boolean highestWins;
+    private String name;
+    private int valor;
+    private boolean highestWins;
 
     public Attribute(String name, int valor, boolean highestWins) {
         this.name = name;
