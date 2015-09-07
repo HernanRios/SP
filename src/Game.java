@@ -25,7 +25,7 @@ public class Game {
     }
 
     private void nextRound() {
-        Card card;
+        Card card, winCard;
         ArrayList<Card> cardsInPlay = new ArrayList<>();
         int attributeInGame = players.get(runWinner).selectAttribute();
         for (Player player : players) {
@@ -33,6 +33,8 @@ public class Game {
             cardsOwners.put(card,player);
             cardsInPlay.add(card);
         }
+        winCard = winCard(cardsInPlay, attributeInGame);
+
         for (int i = 0; i < playersAmount; i++) {
 
         }
