@@ -1,15 +1,16 @@
+import java.util.Map.Entry;
 /**
  * Created by Nico on 8/26/15.
  */
 public class Attribute {
     private String name;
     private int valor;
-    private boolean highestWins;
+    private int highestWins;
 
-    public Attribute(String name, int valor, boolean highestWins) {
+    public Attribute(String name, int valor, int highestWins) {
         this.name = name;
         this.valor = valor;
-        this.highestWins = false;
+        this.highestWins = highestWins;
     }
 
     public int getValor() {
@@ -20,11 +21,11 @@ public class Attribute {
         return name;
     }
 
-    public boolean getWinType() {
+    public int getWinType() {
         return this.highestWins;
     }
 
-    public void setWinType(Boolean highestWins) {
+    public void setWinType(int highestWins) {
         this.highestWins = highestWins;
     }
     public void setName(String name) {

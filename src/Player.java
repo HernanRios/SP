@@ -1,29 +1,43 @@
-//import java.util.Random;
+import java.util.Random;
 /**
  * Created by Nico on 8/30/15.
  */
 public class Player {
     private Deck deck;
-    private String name;
 
-    public Player(String name, Deck deck) {
-        this.name = name;
+    public Player(Deck deck) {
         this.deck = deck;
     }
 
+   // public Player(){}
+
     public Card play() {
-        return this.deck.getCard();
+        if (deck.getQuantityCards() > 0) {
+            return this.deck.getCard();
+        }
+        else
+            return null;
     }
 
-    public void won(Card card) {
+    public Player(String name) {
+    }
+
+    public void addCard(Card card) {
         this.deck.addCard(card);
     }
 
-    public void Cardlost() {
+    public Card getCard() {
+        Card lostCard = this.deck.getCard();
         this.deck.removeCard();
+        return lostCard;
     }
 
-    //public selectAttribute() {
-    //    int a = Random.nextInt(1 - 7 + 1) + 1
-    //}
+    public int remainingCards() {
+        return deck.getQuantityCards();
+    }
+
+    public int selectAttribute() {
+        Random randomGenerator = new Random();
+        return randomGenerator.nextInt(deck.getAttributesAmount() - 1);
+    }
 }

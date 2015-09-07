@@ -21,26 +21,32 @@ public class Card {
         this.attributes = attributes;
     }
 
-    public void setAttribute(String name, int value) {
+    public void setAttribute(String name, int value, int condition) {
         if (this.attributes.size() <=7) {
-            Attribute newAttribute = new Attribute(name, value, false);
+            Attribute newAttribute = new Attribute(name, value, condition);
             this.attributes.add(newAttribute);
         }
     }
 
-    public int getAttribute(String attribute) {
-        if (!this.attributes.isEmpty()) { //if the array isn't empty.
-            Iterator<Attribute> iterator = attributes.iterator(); //build the iterator.
-            while (iterator.hasNext()) {
-                if (attribute == iterator.next().getName()){
-                    return iterator.next().getValor();
-                }
-            }
-        }
-        return 0;
+    public int getAttribute(int attribute) {
+        if (!this.attributes.isEmpty()) {
+            return this.attributes.get(attribute).getValor();
+        } else
+            return -1;
     }
 
-    public ArrayList<Attribute> getAttributes(){
+    public int getAttributeCondition(int attribute) {
+        if (!this.attributes.isEmpty()) {
+            return this.attributes.get(attribute).getWinType();
+        } else
+            return 1;
+    }
+
+    public ArrayList<Attribute> getAttributes() {
         return this.attributes;
+    }
+
+    public int getAttributesAmount() {
+        return attributes.size();
     }
 }
