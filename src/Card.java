@@ -17,7 +17,7 @@ public class Card {
         return this.name;
     }
 
-    public void setAttributtes(ArrayList<Attribute> attributtes) {
+    public void setAttributtes(ArrayList<Attribute> attributes) {
         this.attributes = attributes;
     }
 

@@ -64,15 +64,24 @@ public class Game {
     //private Player confrontation(Player player, Player opponent ) {
     //}
 
-    private Card winCard(Card cardOpponent1, Card cardOpponent2, int attribute) {
+    private Card winCard(ArrayList<Card> cardInPlay, int condition) {
+        do {
+            if (cardInPlay.size() == 1)
+                return cardInPlay.get(0);
+            else {cardInPlay.remove(loserCard(cardInPlay.get(0), cardInPlay.get(1), condition));}
+            } while (cardInPlay.size() != 1);
+        return cardInPlay.get(0);
+    }
+
+
+    private Card loserCard(Card cardOpponent1, Card cardOpponent2, int attribute) {
         int condition = cardOpponent1.getAttributeCondition(attribute);
         int attributteCard1 = cardOpponent1.getAttribute(attribute) * condition;
         int attributteCard2 = cardOpponent2.getAttribute(attribute) * condition;
-
         if (attributteCard1 > attributteCard2) {
-            return cardOpponent1;
-        } else if (attributteCard2 > attributteCard1) {
             return cardOpponent2;
+        } else if (attributteCard2 > attributteCard1) {
+            return cardOpponent1;
         } else {
             return null;
         }
